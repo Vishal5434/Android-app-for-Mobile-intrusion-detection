@@ -23,7 +23,7 @@ Two Android phones form an intrusion alarm, built in Simulink. One phone guards 
 
 ## Files
 
-- `DSP_final_pro.slx`: the Simulink model (deployed to both phones)
+- `DSP_Simulink.slx`: the Simulink model (deployed to both phones)
 - `Alert.wav`: recorded alert message (keep it in the same folder as the model)
 - `Siren.wav`: siren sound (same folder)
 
@@ -77,7 +77,7 @@ The **State_change** button sends a command to the Node (UDP port 25002). Detect
 
 ## How to run
 
-1. Open `DSP_final_pro.slx` from a folder outside OneDrive, with `Alert.wav` and `Siren.wav` in the same folder.
+1. Open `DSP_Simulink.slx` from a folder outside OneDrive, with `Alert.wav` and `Siren.wav` in the same folder.
 2. In the **UDP Send** blocks, set the **Remote address** to the IP address of the *other* phone, in single quotes. Phone 1's build points at Phone 2, and Phone 2's build points at Phone 1. Nothing else changes between the two builds.
 3. Set **Hardware board** to **Android Device**, then click **Build, Deploy & Start** for each phone. Tap **Allow** on the permission requests (location, etc.).
 4. On the phone that will stay in place, press **NODE**. It starts ARMED, and after about 5 seconds it watches for light changes and movement.
